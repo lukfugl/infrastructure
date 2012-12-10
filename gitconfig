@@ -94,3 +94,6 @@
         id=$0; \
       fi; \
       git branch -m gerrit/$id'"
+[user]
+	name = Jacob Fugal
+	email = jacob@instructure.com
