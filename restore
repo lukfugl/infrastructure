@@ -1,0 +1,17 @@
+#!bash
+
+ln -s ~/.infrastructure/bin ~/bin
+ln -s ~/.infrastructure/bash ~/.bash
+ln -s ~/.infrastructure/bashrc ~/.bashrc
+ln -s ~/.infrastructure/profile ~/.profile
+ln -s ~/.infrastructure/vimrc.after ~/.vimrc.after
+ln -s ~/.infrastructure/gitconfig ~/.gitconfig
+
+LIMECHAT=~/Library/Application Support/LimeChat/Themes
+ln -s ~/.infrastructure/LimeChat/limescripts $LIMECHAT/limescripts
+ln -s $LIMECHAT/limescripts/limescripts.js $LIMECHAT/mosey.js
+ln -s ~/.infrastructure/LimeChat/mosey-limechat-theme/mosey.css $LIMECHAT/mosey.css
+ln -s ~/.infrastructure/LimeChat/mosey-limechat-theme/mosey.yaml $LIMECHAT/mosey.yaml
+
+LIMECHAT=~/Library/Application Support/iTerm
+ln -s ~/.infrastructure/Desert.itermcolors $ITERM/Desert.itermcolors

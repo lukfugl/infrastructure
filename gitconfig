@@ -1,0 +1,96 @@
+[alias]
+    gerrit-submit = "!bash -c ' \
+        local_ref=$(git symbolic-ref HEAD); \
+        local_name=${local_ref##refs/heads/}; \
+        remote=$(git config branch.\"$local_name\".remote || echo origin); \
+        remote_ref=$(git config branch.\"$local_name\".merge); \
+        remote_name=${remote_ref##refs/heads/}; \
+        remote_review_ref=\"refs/for/$remote_name\"; \
+        r=\"\"; \
+        if [[ $0 != \"\" && $0 != \"bash\" ]]; then r=\"--reviewer=$0\"; fi; \
+        if [[ $1 != \"\" ]]; then r=\"$r --reviewer=$1\"; fi; \
+        if [[ $2 != \"\" ]]; then r=\"$r --reviewer=$2\"; fi; \
+        if [[ $3 != \"\" ]]; then r=\"$r --reviewer=$3\"; fi; \
+        if [[ $4 != \"\" ]]; then r=\"$r --reviewer=$4\"; fi; \
+        git push --receive-pack=\"gerrit receive-pack $r\" $remote HEAD:$remote_review_ref'"
+
+    cherry-pick-merge = "!bash -c 'git cherry-pick -n -m 1 $0 && \
+        git log -1 --pretty=%P $0 | cut -b 42- > .git/MERGE_HEAD && \
+        git commit -v'"
+
+    resolve-ref = log -1 --pretty=format:%H
+
+    changeset = "!bash -c ' \
+        git fetch $(git config remote.$(git this-remote).url) \
+                  refs/changes/${0: -2}/$0/$1; \
+        git resolve-ref FETCH_HEAD'"
+
+    this-remote = "!bash -c ' \
+        local_ref=$(git symbolic-ref HEAD); \
+        local_name=${local_ref##refs/heads/}; \
+        echo $(git config branch.\"#local_name\".remote || echo origin)'"
+
+    remote-ref = "!bash -c ' \
+        local_ref=$(git symbolic-ref HEAD); \
+        local_name=${local_ref##refs/heads/}; \
+        remote=$(git config branch.\"#local_name\".remote || echo origin); \
+        remote_ref=$(git config branch.\"$local_name\".merge); \
+        remote_name=${remote_ref##refs/heads/}; \
+        echo remotes/$remote/$remote_name'"
+
+    rebase-recent = !git rebase -i $(git merge-base HEAD $(git remote-ref))
+
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
+    kill-whitespace = "!bash -c 'git commit -a -m pre-whitespace-killed && \
+        echo pre-whitespace ref: $(git resolve-ref HEAD) && \
+        git reset HEAD^ && \
+        git diff --ignore-space-at-eol > /tmp/git-whitespace-diff-$$.patch && \
+        git reset --hard HEAD && \
+        git apply /tmp/git-whitespace-diff-$$.patch && \
+        rm /tmp/git-whitespace-diff-$$.patch'"
+
+    tracking-branch = "!bash -c ' \
+      branch=\"origin/master\"; \
+      if [[ $0 == \"bash\" ]]; then \
+        name=$1; \
+        if [[ $2 != \"\" ]]; then branch=$2; fi; \
+      fi; \
+      if [[ $0 != \"\" ]]; then \
+        name=$0; \
+        if [[ $1 != \"\" ]]; then branch=$1; fi; \
+      fi; \
+      git checkout -t $branch -b $name'"
+
+    dev-branch = "!bash -c ' \
+      branch=\"origin/master\"; \
+      if [[ $0 == \"bash\" ]]; then \
+        name=$1; \
+        if [[ $2 != \"\" ]]; then branch=$2; fi; \
+      fi; \
+      if [[ $0 != \"\" ]]; then \
+        name=$0; \
+        if [[ $1 != \"\" ]]; then branch=$1; fi; \
+      fi; \
+      git tracking-branch dev/$name $branch'"
+
+    redmine-branch = "!bash -c ' \
+      branch=\"origin/master\"; \
+      if [[ $0 == \"bash\" ]]; then \
+        name=$1; \
+        if [[ $2 != \"\" ]]; then branch=$2; fi; \
+      fi; \
+      if [[ $0 != \"\" ]]; then \
+        name=$0; \
+        if [[ $1 != \"\" ]]; then branch=$1; fi; \
+      fi; \
+      git tracking-branch redmine/$name $branch'"
+
+    gerrit-branch = "!bash -c ' \
+      if [[ $0 == \"bash\" ]]; then \
+        id=$1; \
+      fi; \
+      if [[ $0 != \"\" ]]; then \
+        id=$0; \
+      fi; \
+      git branch -m gerrit/$id'"

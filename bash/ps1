@@ -1,0 +1,20 @@
+#!bash
+
+source ~/.bash/git-completion
+
+# turn on all the options for the git prompt addon
+GIT_PS1_SHOWUPSTREAM="verbose"
+GIT_PS1_DESCRIBE_STYLE="branch"
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+
+# you'll want to change these color codes to those appropriate to your taste
+# and color scheme. the values here roughly match the names in comments in my
+# color scheme (Desert.itermcolors).
+PS1_CWD_COLOR="\e[0;33m" # parchment
+GIT_PS1_BRANCH_COLOR="\e[0;36m" # rose
+GIT_PS1_DIVERGENCE_COLOR="\e[0;31m" # blood
+GIT_PS1_NOTICES_COLOR="\e[1;36m" # goldenrod
+
+PS1="\n${PS1_CWD_COLOR}\w\$(__git_ps1)\e[0m\n>> "

@@ -1,0 +1,6 @@
+#!bash
+
+alias vim=mvim
+alias vimdiff=mvimdiff
+alias ex=mex
+alias rvim=rmvim
