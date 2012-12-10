@@ -15,3 +15,8 @@ ln -s ~/.infrastructure/LimeChat/mosey-limechat-theme/mosey.yaml $LIMECHAT/mosey
 
 LIMECHAT=~/Library/Application Support/iTerm
 ln -s ~/.infrastructure/Desert.itermcolors $ITERM/Desert.itermcolors
+
+rbenv install 1.8.7-p370
+rbenv install 1.9.3-p286
+rbenv global 1.9.3-p286
+rbenv rehash

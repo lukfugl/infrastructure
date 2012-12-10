@@ -22,13 +22,15 @@ provide ~/.ssh/id_rsa.pub to Gerrit
 
 Install
 =======
-install iTerm2
 
-install MacVim
-
-install LimeChat
-
-install janus
+ * iTerm2
+ * MacVim
+ * LimeChat
+ * janus (git)
+ * XCode
+ * homebrew
+ * rbenv (brew)
+ * ruby-build (brew)
 
 Restore infrastructure
 ======================
