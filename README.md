@@ -4,6 +4,12 @@ however, rather than as a submodule, since the configuration
 (lib/main.coffee, new .coffee modules in lib/) has to happen right
 inside the repo.
 
+the mosey-limechat-theme submodule points to
+https://github.com/phaedryx/mosey-limechat-theme
+
+the Desert.itermcolors comes from
+https://github.com/mbadolato/iTerm2-Color-Schemes
+
 SSH
 ===
 run ssh-keygen
