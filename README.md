@@ -4,25 +4,38 @@ however, rather than as a submodule, since the configuration
 (lib/main.coffee, new .coffee modules in lib/) has to happen right
 inside the repo.
 
-== SSH ==
+SSH
+===
 run ssh-keygen
+
 provide ~/.ssh/id_rsa.pub to ops
+
 provide ~/.ssh/id_rsa.pub to GitHub
+
 provide ~/.ssh/id_rsa.pub to Gerrit
 
-== Install ==
+Install
+=======
 install iTerm2
+
 install MacVim
+
 install LimeChat
+
 install janus
 
-== Restore infrastructure ==
+Restore infrastructure
+======================
 run ~/.infrastructure/restore
 
-== iTerm ==
+iTerm
+=====
 import "Desert" color theme from ~/Library/Application Support/iTerm
+
 select "Desert" color theme
 
-== LimeChat ==
+LimeChat
+========
 select "mosey" theme
+
 add Instructure (irc.instructure.com:8765, SSL)
