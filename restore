@@ -5,6 +5,7 @@ ln -s ~/.infrastructure/bash ~/.bash
 ln -s ~/.infrastructure/bashrc ~/.bashrc
 ln -s ~/.infrastructure/profile ~/.profile
 ln -s ~/.infrastructure/vimrc.after ~/.vimrc.after
+ln -s ~/.infrastructure/gvimrc.after ~/.gvimrc.after
 ln -s ~/.infrastructure/gitconfig ~/.gitconfig
 
 LIMECHAT=~/Library/Application Support/LimeChat/Themes
