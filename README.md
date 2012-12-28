@@ -31,6 +31,12 @@ Install
  * homebrew
  * rbenv (brew)
  * ruby-build (brew)
+ * rails (gem)
+ * bundler (gem)
+ * rbenv-bundler (brew)
+ * mysql (brew, for canvas)
+ * postgresql (brew, for canvas)
+ * libxmlsec1 (brew, for canvas)
 
 Restore infrastructure
 ======================

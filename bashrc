@@ -1,4 +1,4 @@
-EDITOR='mvim -f'
+export EDITOR='mvim -f'
 
 source ~/.bash/path
 source ~/.bash/ps1

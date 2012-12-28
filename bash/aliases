@@ -4,3 +4,5 @@ alias vim=mvim
 alias vimdiff=mvimdiff
 alias ex=mex
 alias rvim=rmvim
+alias be='bundle exec'
+alias rg='be spec'
