@@ -19,7 +19,7 @@ ln -s ~/.infrastructure/LimeChat/Hipchat/Hipchat.css $LIMECHAT/Hipchat.css
 ln -s ~/.infrastructure/LimeChat/Hipchat/Hipchat.yaml $LIMECHAT/Hipchat.yaml
 ln -s $LIMECHAT/limescripts/limescripts.js $LIMECHAT/Hipchat.js
 
-LIMECHAT=~/Library/Application Support/iTerm
+ITERM=~/Library/Application Support/iTerm
 ln -s ~/.infrastructure/Desert.itermcolors $ITERM/Desert.itermcolors
 
 rbenv install 1.8.7-p370
