@@ -3,6 +3,8 @@ load 'gerrit'
 load 'redmine'
 load 'jira'
 load 'mosey'
+load 'instructure_avatars'
+load 'buildStatus'
 
 ###
 # load JS like this
