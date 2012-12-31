@@ -5,6 +5,7 @@ load 'jira'
 load 'mosey'
 load 'instructure_avatars'
 load 'buildStatus'
+load 'zabbix'
 
 ###
 # load JS like this

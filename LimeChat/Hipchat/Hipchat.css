@@ -178,3 +178,45 @@ strong.highlight {
 
 /* for buildStatus.coffee */
 .build-icon { border: none; }
+
+/* for zabbix.coffee */
+.message.zabbix {
+  padding-left: 10px;
+}
+.zabbix-problem .alert:before {
+  font-family: "Apple Color Emoji";
+  content: "⚠";
+  padding-right: 5px;
+  font-style: normal;
+}
+.zabbix-ok .alert:before {
+  font-family: "Apple Color Emoji";
+  content: "✅";
+  padding-right: 5px;
+  font-style: normal;
+}
+.zabbix-problem {
+  background-color: #fee0d2;
+}
+.zabbix-ok {
+  background-color: #addd8e;
+}
+.zabbix .hostname {
+  display: block;
+  font-weight: bold;
+}
+.zabbix .value {
+  clear: both;
+  float: right;
+  font-weight: bold;
+}
+.zabbix .alert {
+  display: block;
+  font-style: italic;
+}
+.zabbix-problem .value {
+  color: #f00;
+}
+.zabbix-ok .value {
+  color: #31a354;
+}
