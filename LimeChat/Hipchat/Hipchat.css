@@ -176,6 +176,8 @@ body.normal .time {
 /* translucent gilfus in #eng and #ops */
 body[channelname="#eng"] .line[nick=gilfus][highlight=false] { opacity: 0.50; }
 body[channelname="#ops"] .line[nick=gilfus][highlight=false] { opacity: 0.50; }
+body[channelname="#eng"] .line[nick=gilfus][highlight=false]:hover { opacity: 1.0; }
+body[channelname="#ops"] .line[nick=gilfus][highlight=false]:hover { opacity: 1.0; }
 
 /* for instructure_avatars.coffee */
 body.normal .avatar-image img { max-height: 15px; }
