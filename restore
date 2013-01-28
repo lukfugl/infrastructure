@@ -1,26 +1,28 @@
-#!bash
+#!/usr/bin/env bash
 
 ln -s ~/.infrastructure/bin ~/bin
 ln -s ~/.infrastructure/bash ~/.bash
 ln -s ~/.infrastructure/bashrc ~/.bashrc
 ln -s ~/.infrastructure/profile ~/.profile
+source ~/.profile
+
 ln -s ~/.infrastructure/vimrc.after ~/.vimrc.after
 ln -s ~/.infrastructure/gvimrc.after ~/.gvimrc.after
 ln -s ~/.infrastructure/gitconfig ~/.gitconfig
 
-LIMECHAT=~/Library/Application Support/LimeChat/Themes
-ln -s ~/.infrastructure/LimeChat/limescripts $LIMECHAT/limescripts
+LIMECHAT="~/Library/Application Support/LimeChat/Themes"
+ln -s ~/.infrastructure/LimeChat/limescripts "$LIMECHAT/limescripts"
 
-ln -s ~/.infrastructure/LimeChat/mosey-limechat-theme/mosey.css $LIMECHAT/mosey.css
-ln -s ~/.infrastructure/LimeChat/mosey-limechat-theme/mosey.yaml $LIMECHAT/mosey.yaml
-ln -s $LIMECHAT/limescripts/limescripts.js $LIMECHAT/mosey.js
+ln -s ~/.infrastructure/LimeChat/mosey-limechat-theme/mosey.css "$LIMECHAT/mosey.css"
+ln -s ~/.infrastructure/LimeChat/mosey-limechat-theme/mosey.yaml "$LIMECHAT/mosey.yaml"
+ln -s "$LIMECHAT/limescripts/limescripts.js" "$LIMECHAT/mosey.js"
 
-ln -s ~/.infrastructure/LimeChat/Hipchat/Hipchat.css $LIMECHAT/Hipchat.css
-ln -s ~/.infrastructure/LimeChat/Hipchat/Hipchat.yaml $LIMECHAT/Hipchat.yaml
-ln -s $LIMECHAT/limescripts/limescripts.js $LIMECHAT/Hipchat.js
+ln -s ~/.infrastructure/LimeChat/Hipchat/Hipchat.css "$LIMECHAT/Hipchat.css"
+ln -s ~/.infrastructure/LimeChat/Hipchat/Hipchat.yaml "$LIMECHAT/Hipchat.yaml"
+ln -s "$LIMECHAT/limescripts/limescripts.js" "$LIMECHAT/Hipchat.js"
 
-ITERM=~/Library/Application Support/iTerm
-ln -s ~/.infrastructure/Desert.itermcolors $ITERM/Desert.itermcolors
+ITERM="~/Library/Application Support/iTerm"
+ln -s ~/.infrastructure/Desert.itermcolors "$ITERM/Desert.itermcolors"
 
 rbenv install 1.8.7-p370
 rbenv install 1.9.3-p286
