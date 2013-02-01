@@ -32,7 +32,7 @@ server-tree:
   background-color: '#383d43'
 
   highlight:
-    color: '#f77c01'
+    color: '#ff003c'
   newtalk:
     color: '#f77c01'
   unread:
