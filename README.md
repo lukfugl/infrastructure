@@ -26,21 +26,95 @@ Install
  * iTerm2
  * MacVim
  * LimeChat
- * janus (git)
- * XCode
- * homebrew
- * rbenv (brew)
- * ruby-build (brew)
- * rails (gem)
- * bundler (gem)
- * rbenv-bundler (brew)
- * postgresql (brew, for canvas)
- * libxmlsec1 (brew, for canvas)
  * Adium
+ * XCode
+ * Adobe Source Code Pro (font, http://sourceforge.net/projects/sourcecodepro.adobe/files/)
 
-Restore infrastructure
-======================
-run ~/.infrastructure/restore
+Setup
+=====
+
+ * **janus**
+
+   ```sh
+   git clone https://github.com/carlhuda/janus.git $HOME/.vim
+   cd $HOME/.vim && rake
+   ```
+
+ * **homebrew**
+
+   NOTE: May already be present in base install.
+
+   ```sh
+   ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+   sudo chown -R <user> /usr/local
+   ```
+
+ * **rbenv, ruby-build, libxmlsec1, node**
+
+   libxmlsec1 and node are for canvas-lms. In most recent system setup,
+   I had to revert to 0.14 recipe of p11-kit (dependency for libxmlsec1)
+   and I had to specify a mirror for libxmlsec1 itself
+   (http://xmlsoft.org/sources/xmlsec/releases/xmlsec1-1.2.18.tar.gz).
+
+   ```sh
+   brew install rbenv ruby-build libxmlsec1 node
+   ```
+
+ * **redis**
+
+   For canvas-lms.
+
+   ```sh
+   brew install redis
+   ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+   ```
+
+ * **cassandra** (with python for pip)
+
+   For canvas-lms. Needs to be in the 1.1.x series. In the most recent
+   system setup, 1.1.8 was the newest 1.1.x recipe, but the selected
+   mirror didn't have the tarballs for 1.1.8 anymore; it had 1.1.10
+   instead. I used the 1.1.10 tarball (url:
+   http://www.apache.org/dyn/closer.cgi?path=/cassandra/1.1.10/apache-cassandra-1.1.10-bin.tar.gz,
+   sha: 594a78399e0e382b61fbfc761a4e2345327a892f) with the 1.1.8 recipe
+   and it seems to be working.
+
+   ```sh
+   brew versions cassandra | grep 1.1.\d | head -n 1
+   cd /usr/local && git checkout <commitish> /usr/local/Library/Formula/cassandra.rb
+   brew install cassandra python
+   pip install cql
+   ln -sfv /usr/local/opt/cassandra/*.plist ~/Library/LaunchAgents
+   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.cassandra.plist
+   ```
+
+ * **postgresql**
+
+   ```sh
+   brew install postgresql
+   initdb /usr/local/var/postgres -E utf8
+   ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+   ```
+
+ * **infrastructure**
+
+   ```sh
+   git clone git@github.com:lukfugl/infrastructure.git $HOME/.infrastructure
+   $HOME/.infrastructure/restore
+   ```
+
+ * **rails, bundler**
+
+   The preceding infrastructure restore should have sourced the restored
+   .bashrc, but in case it didn't make sure rbenv is active when
+   installing these gems:
+
+   ```sh
+   gem install rails bundler
+   rbenv rehash
+   ```
 
 iTerm
 =====
