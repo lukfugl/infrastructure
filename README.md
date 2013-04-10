@@ -51,7 +51,7 @@ Setup
 
  * **rbenv, ruby-build, libxmlsec1, node**
 
-   libxmlsec1 and node are for canvas-lms. In most recent system setup,
+   In most recent system setup,
    I had to revert to 0.14 recipe of p11-kit (dependency for libxmlsec1)
    and I had to specify a mirror for libxmlsec1 itself
    (http://xmlsoft.org/sources/xmlsec/releases/xmlsec1-1.2.18.tar.gz).
@@ -62,8 +62,6 @@ Setup
 
  * **redis**
 
-   For canvas-lms.
-
    ```sh
    brew install redis
    ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
@@ -72,7 +70,7 @@ Setup
 
  * **cassandra** (with python for pip)
 
-   For canvas-lms. Needs to be in the 1.1.x series. In the most recent
+   Needs to be in the 1.1.x series. In the most recent
    system setup, 1.1.8 was the newest 1.1.x recipe, but the selected
    mirror didn't have the tarballs for 1.1.8 anymore; it had 1.1.10
    instead. I used the 1.1.10 tarball (url:
@@ -81,7 +79,7 @@ Setup
    and it seems to be working.
 
    ```sh
-   brew versions cassandra | grep 1.1.\d | head -n 1
+   brew versions cassandra | grep -e '1\.1\.\d' | head -n 1
    cd /usr/local && git checkout <commitish> /usr/local/Library/Formula/cassandra.rb
    brew install cassandra python
    pip install cql
