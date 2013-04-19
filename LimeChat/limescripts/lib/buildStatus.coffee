@@ -8,7 +8,7 @@ bind 'line', (line) ->
   # see if out message matches:
   # gilfus: ● .* Build (Succeeded|FAILED) in x mins ● name ● git status msg ● https://hudson.instructure.com/job/canvas-lms/7283/
   message = $(line).find '.message'
-  regex = /● (.+) (?:Build)? (Succeeded|FAILED)\s*(?:\w+:(\d*))?\s*(?:in (\d+) mins)?\s*●\s*(?:(\w+)\s*●)?\s*(?:(.+)\s*●)?\s*(https:.*)\s*●/
+  regex = /● (.+) (?:Build)?\s*(Succeeded|FAILED)\s*(?:\w+:(\d*))?\s*(?:in (\d+) mins)?\s*●\s*(?:(\w+)\s*●)?\s*(?:(.+)\s*●)?\s*(https:.*)\s*●/
   matches = message.text().match regex
   return unless matches
 
