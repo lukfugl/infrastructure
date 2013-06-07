@@ -1,6 +1,6 @@
 #!bash
 
-PATH=~/bin:/usr/local/bin:$PATH
+PATH=~/bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
 
 ### Added by the Heroku Toolbelt
 PATH="/usr/local/heroku/bin:$PATH"
