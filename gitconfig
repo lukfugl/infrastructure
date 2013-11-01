@@ -41,6 +41,7 @@
     rebase-recent = !git rebase -i $(git merge-base HEAD $(git remote-ref))
 
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lg-bw = log --graph --pretty=format:'%h -%d %s (%cr)' --abbrev-commit --date=relative
 
     kill-whitespace = "!bash -c 'git commit -a -m pre-whitespace-killed && \
         echo pre-whitespace ref: $(git resolve-ref HEAD) && \
