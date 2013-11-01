@@ -7,3 +7,5 @@ source ~/.bash/aliases
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)";
 fi
+
+source /opt/boxen/env.sh
