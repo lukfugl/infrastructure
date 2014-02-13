@@ -1,3 +1,21 @@
 [submodule "LimeChat/mosey-limechat-theme"]
   path = LimeChat/mosey-limechat-theme
   url = https://github.com/phaedryx/mosey-limechat-theme
+[submodule "janus/ag"]
+	path = janus/ag
+	url = https://github.com/rking/ag.vim
+[submodule "janus/rename"]
+	path = janus/rename
+	url = https://github.com/danro/rename.vim
+[submodule "janus/ctags"]
+	path = janus/ctags
+	url = https://github.com/vim-scripts/ctags.vim
+[submodule "janus/tComment"]
+	path = janus/tComment
+	url = https://github.com/vim-scripts/tComment
+[submodule "janus/vim-ruby-refactoring"]
+	path = janus/vim-ruby-refactoring
+	url = https://github.com/rking/vim-ruby-refactoring
+[submodule "janus/vim-characterize"]
+	path = janus/vim-characterize
+	url = https://github.com/tpope/vim-characterize

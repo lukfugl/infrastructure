@@ -6,3 +6,6 @@ PATH=~/bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
 PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH
+
+GOPATH="$HOME/personal/go"
+export GOPATH

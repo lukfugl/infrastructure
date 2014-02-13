@@ -9,9 +9,11 @@ ln -s ~/.infrastructure/bashrc ~/.bashrc
 ln -s ~/.infrastructure/profile ~/.profile
 source ~/.profile
 
+ln -s ~/.infrastructure/janus ~/.janus
 ln -s ~/.infrastructure/vimrc.after ~/.vimrc.after
 ln -s ~/.infrastructure/gvimrc.after ~/.gvimrc.after
 ln -s ~/.infrastructure/gitconfig ~/.gitconfig
+ln -s ~/.infrastructure/irbrc ~/.irbrc
 
 LIMECHAT="$HOME/Library/Application Support/LimeChat/Themes"
 ln -s ~/.infrastructure/LimeChat/limescripts "$LIMECHAT/limescripts"

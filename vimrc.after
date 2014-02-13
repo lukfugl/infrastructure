@@ -1,1 +1,65 @@
 color desert
+
+" Status Line
+set statusline=(%n)\ %f\ %y\%m\%r%=Line:%l/%L[%p%%]\ Col:%v[0x%B]
+" TODO doesn't seem to be including the fugitive bit
+set statusline=(%n)\ %f\ %y\%m\%r%=Line:%l/%L[%p%%]\ Col:%v[0x%B]\ %{fugitive#statusline()}
+
+" Make tabs visible
+set listchars=tab:▸\ 
+
+" Wild Menu
+set wildmenu
+
+" Folding
+set foldenable
+set foldlevelstart=3
+set foldmethod=syntax
+
+" Key mappings
+let mapleader=","
+nnoremap gV `[v`]
+nnoremap <leader>a :Ag
+
+" Toggles
+nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader>u :GundoToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+
+" RSpec
+noremap <leader>rt :!bundle exec rspec %<CR>
+noremap <leader>lt :!bundle exec rspec % -l <C-r>=line('.')<CR><CR>
+noremap <leader>rs :!bundle exec spec %<CR>
+noremap <leader>ls :!bundle exec spec % -l <C-r>=line('.')<CR><CR>
+
+" Faster pane switching
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Ctrl-P setup
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+" Persistent undo (keep undo history across sessions, by storing in file)
+if has('persistent_undo')
+  silent !mkdir ~/.vim-backups > /dev/null 2>&1
+  set undodir=~/.vim-backups
+  set undofile
+endif
+
+" gist.vim setup
+" let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_post_private = 1
+
+" Fugitive
+nmap <Leader>gb :Gblame<CR>
+nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gd :Gdiff<CR>
+nmap <Leader>gl :Glog<CR>
+nmap <Leader>gc :Gcommit<CR>
