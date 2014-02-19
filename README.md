@@ -51,11 +51,6 @@ Setup
 
  * **rbenv, ruby-build, libxmlsec1, node**
 
-   In most recent system setup,
-   I had to revert to 0.14 recipe of p11-kit (dependency for libxmlsec1)
-   and I had to specify a mirror for libxmlsec1 itself
-   (http://xmlsoft.org/sources/xmlsec/releases/xmlsec1-1.2.18.tar.gz).
-
    ```sh
    brew install rbenv ruby-build libxmlsec1 node
    ```
