@@ -6,7 +6,7 @@ set statusline=(%n)\ %f\ %y\%m\%r%=Line:%l/%L[%p%%]\ Col:%v[0x%B]
 set statusline=(%n)\ %f\ %y\%m\%r%=Line:%l/%L[%p%%]\ Col:%v[0x%B]\ %{fugitive#statusline()}
 
 " Make tabs visible
-set listchars=tab:▸\ 
+"set listchars=tab:▸\ 
 
 " Wild Menu
 set wildmenu
