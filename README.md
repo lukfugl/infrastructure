@@ -35,7 +35,7 @@ Setup
    NOTE: May already be present in base install.
 
    ```sh
-   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
    sudo chown -R <user> /usr/local
    ```
 
