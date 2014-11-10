@@ -1,6 +1,3 @@
-[submodule "LimeChat/mosey-limechat-theme"]
-  path = LimeChat/mosey-limechat-theme
-  url = https://github.com/phaedryx/mosey-limechat-theme
 [submodule "janus/ag"]
 	path = janus/ag
 	url = https://github.com/rking/ag.vim

@@ -15,17 +15,6 @@ ln -s ~/.infrastructure/gvimrc.after ~/.gvimrc.after
 ln -s ~/.infrastructure/gitconfig ~/.gitconfig
 ln -s ~/.infrastructure/irbrc ~/.irbrc
 
-LIMECHAT="$HOME/Library/Application Support/LimeChat/Themes"
-ln -s ~/.infrastructure/LimeChat/limescripts "$LIMECHAT/limescripts"
-
-ln -s ~/.infrastructure/LimeChat/mosey-limechat-theme/mosey.css "$LIMECHAT/mosey.css"
-ln -s ~/.infrastructure/LimeChat/mosey-limechat-theme/mosey.yaml "$LIMECHAT/mosey.yaml"
-ln -s "$LIMECHAT/limescripts/limescripts.js" "$LIMECHAT/mosey.js"
-
-ln -s ~/.infrastructure/LimeChat/Hipchat/Hipchat.css "$LIMECHAT/Hipchat.css"
-ln -s ~/.infrastructure/LimeChat/Hipchat/Hipchat.yaml "$LIMECHAT/Hipchat.yaml"
-ln -s "$LIMECHAT/limescripts/limescripts.js" "$LIMECHAT/Hipchat.js"
-
 ITERM="$HOME/Library/Application Support/iTerm"
 ln -s ~/.infrastructure/Desert.itermcolors "$ITERM/Desert.itermcolors"
 
