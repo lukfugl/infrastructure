@@ -19,3 +19,6 @@
 [submodule "janus/vim-characterize"]
 	path = janus/vim-characterize
 	url = https://github.com/tpope/vim-characterize
+[submodule "janus/vim-glsl"]
+	path = janus/vim-glsl
+	url = https://github.com/tikhomirov/vim-glsl
