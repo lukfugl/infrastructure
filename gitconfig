@@ -107,3 +107,8 @@ excludesfile = /opt/boxen/config/git/gitignore
 [user]
 	name = Jacob Fugal
 	email = jacob@instructure.com
+[push]
+	default = simple
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
