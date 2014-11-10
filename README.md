@@ -55,18 +55,9 @@ Setup
 
  * **cassandra** (with python for pip)
 
-   Needs to be in the 1.1.x series. In the most recent
-   system setup, 1.1.8 was the newest 1.1.x recipe, but the selected
-   mirror didn't have the tarballs for 1.1.8 anymore; it had 1.1.10
-   instead. I used the 1.1.10 tarball (url:
-   http://www.apache.org/dyn/closer.cgi?path=/cassandra/1.1.10/apache-cassandra-1.1.10-bin.tar.gz,
-   sha: 594a78399e0e382b61fbfc761a4e2345327a892f) with the 1.1.8 recipe
-   and it seems to be working.
+   Brew can't seem to keep a consistently good version of cassandra formulated. And now they're removed `brew version`. So just do whatever you need to to get cassandra installed. :p For now I'm using https://gist.github.com/ncloward/4cd208ee0dbdf78fb1ee. Then:
 
    ```sh
-   brew versions cassandra | grep -e '1\.1\.\d' | head -n 1
-   cd /usr/local && git checkout <commitish> /usr/local/Library/Formula/cassandra.rb
-   brew install cassandra python
    pip install cql
    ln -sfv /usr/local/opt/cassandra/*.plist ~/Library/LaunchAgents
    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.cassandra.plist
