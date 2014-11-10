@@ -55,13 +55,17 @@ Setup
 
  * **cassandra** (with python for pip)
 
-   Brew can't seem to keep a consistently good version of cassandra formulated. And now they're removed `brew version`. So just do whatever you need to to get cassandra installed. :p For now I'm using https://gist.github.com/ncloward/4cd208ee0dbdf78fb1ee. Then:
+   Brew can't seem to keep a consistently good version of cassandra formulated. And now they're removed `brew version`. So just do whatever you need to to get cassandra installed. :p For now I'm using https://github.com/lukfugl/homebrew-cassandra-tap:
 
    ```sh
+   brew tap https://github.com/lukfugl/homebrew-cassandra-tap
+   brew install lukfugl/cassandra-tap/cassandra
    pip install cql
    ln -sfv /usr/local/opt/cassandra/*.plist ~/Library/LaunchAgents
    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.cassandra.plist
    ```
+   
+   Thanks to Nick Cloward for the formula.
 
  * **postgresql**
 
