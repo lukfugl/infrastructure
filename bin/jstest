@@ -1,0 +1,3 @@
+#!/bin/sh
+
+JS_SPEC_MATCHER=**/$1.js bundle exec rake js:test quick=true
