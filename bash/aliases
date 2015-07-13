@@ -5,4 +5,4 @@ alias vimdiff=mvimdiff
 alias ex=mex
 alias rvim=rmvim
 alias be='bundle exec'
-alias rg='bin/rspec'
+alias rg='rspec'
